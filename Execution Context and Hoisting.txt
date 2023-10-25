@@ -8,7 +8,7 @@ Thera are two phases in the execution context. Firstly memory allocation is perf
 Memory Allocation                                           Code Execution
 
 The variables are declared and                              During code execution, the variables are assigned their original          
-functions are also declared. But the                        value. In other words, after line of code is executed where a variable is         functions are copied as they are and the                  assigned a value,
+functions are also declared. But the                        value. In other words, after line of code is executed where a variable is       functions are copied as they are and the                    assigned a value,
 variables are assigned undefined.                           only then the variable in the memory part gets assigned the same value.
                                                             The functions create their own execution context.
 
