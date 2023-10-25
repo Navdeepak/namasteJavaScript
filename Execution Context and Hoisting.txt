@@ -1,0 +1,45 @@
+Execution context                   
+
+
+Everything is JavaScript happens in the Execution context.
+
+Thera are two phases in the execution context. Firstly memory allocation is performed and then code execution phase is done.
+
+Memory Allocation                                           Code Execution
+
+The variables are declared and                              During code execution, the variables are assigned their original.
+functions are also declared. But the                        The functions create their own execution context.
+functions are copied as they are and the
+variables are assigned undefined.
+
+
+
+First of all, the global Execution context is created. Then when a function is going to be executed, then aonther execution context is created.
+It all happens in the call stack.
+
+
+Call stack:
+
+|                                           |               
+|                                           |
+|                                           |
+|                                           |
+|                                           |
+|                                           |
+|                                           |
+|                                           |
+|                                           |
+|___________________________________________|
+|         Execution Context no.2            |
+|___________________________________________|
+|        Global Execution Context           |
+|___________________________________________|
+
+After the function is executed, it's execution context vanishes like gets deleted and then the rest of the code is executed in the Global execution context.
+And when all of the code is executed, the call stack goes empty.
+
+
+Q - Why the variables are undefined and functions are not when used/called before declaration?
+A - The variables and functions are defined and allocated memory before the execution of the code. The functions though, when accessed before their declration, behave just as they do when accessed after their declaration. This is because in the memory the functions are there as it is and the varibales are just assigned undefined. This is also known as hoisting.
+
+
