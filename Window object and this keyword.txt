@@ -1,0 +1,28 @@
+Window object and this keyword
+
+- The Window object(a global object) is created along with the global execution context by the JS engine.
+- this keyword is also created by the JS engine for global execution context and for functions' execution context as well. Both point to their respective execution contexts. 
+- When used globally it points to the global Window object.
+
+Following are created by the JS engine when a file is run:
+ - A global space.
+ - Global Memory space.
+
+Basically, everything which is not inside a function, is in Global space.
+And when we create functions and/or variables in the global space, they get attached to the global Window object.
+This can be shown by creating a variable in the global space and then accessing it as Window.variableName.
+
+var x = 10;
+function func() {
+    var a = 100;
+    console.log(100);
+}
+
+console.log(Window.x);
+console.log(x);                     // same result will be shown as above
+console.log(a);                     // accessing a variable created in a function outside it.
+
+
+When we use a variableName(a variable) without Window.variableName or this.variableName syntax, the JS engine assumes that the variable is a global variable and works the same as Window.variableName or this.variableName.
+
+And when we try to use a variable created inside a function, the JS engine will give an error as the variable is not defined. That is because it looks for the variable inside of the global Window object. And it won't be there because variable's execution context and memory space is not the same as the Window object.
