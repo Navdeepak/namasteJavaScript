@@ -1,0 +1,20 @@
+The functions have their own execution context.
+So, the memory space and code execution part is also inside their execution context.
+The global execution context and the execution context of the function(s) will have their own memory space and virtual kind of running environment.
+
+Hence, sometimes if the variables having same name are used over the code, inside and outside the functions, their values differs. Below is the code snippet demonstrating the same:
+
+
+var x = 1;
+a();
+b();
+
+function a() {
+    var x = 10;
+    console.log(x);
+}
+
+function b() {
+    var x = 100;
+    console.log(x);
+}
