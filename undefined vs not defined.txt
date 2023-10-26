@@ -1,0 +1,9 @@
+undefined vs not defined
+
+undefined is a special keyword in JavaScript. It is not there is other languages.
+As we know, JavaScrit allocates memory to the variables even before the code is executed. And during memory allocation, JS puts a placeholder against the variables and that is undefined. undefined acts as a placeholder which is kept for the time being until the variaible is assgined a value in the code.
+
+And so, it is different than 'not defined'. An error that we get when we try to access a variable which is not declared/defined in the code. We can also say that a variable which has not been allocated memory, is 'not defined'.
+
+Also, we should not assgin variables 'undefined' manually. Using undefined for this purpose can be confusing because 'undefined' has a specific meaning in the language related to uninitialized variables.
+Use of null Instead: In JavaScript and some other languages, it's more appropriate to use the null value to represent the absence of a value or an empty state.
