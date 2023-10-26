@@ -1,16 +1,16 @@
 Execution context                   
 
 
-Everything is JavaScript happens in the Execution context.
+Everything in JavaScript happens in the Execution context.
 
-Thera are two phases in the execution context. Firstly memory allocation is performed and then code execution phase is done.
+There are two phases in the execution context. Firstly memory allocation is performed and then code execution phase is done.
 
 Memory Allocation                                           Code Execution
 
 The variables are declared and                              During code execution, the variables are assigned their original          
-functions are also declared. But the                        value. In other words, after line of code is executed where a variable is       functions are copied as they are and the                    assigned a value,
-variables are assigned undefined.                           only then the variable in the memory part gets assigned the same value.
-                                                            The functions create their own execution context.
+functions are also declared. But the                        value. In other words, after line of code is executed where a variable is functions are copied as they are and the                    assigned a value, only then the variable in the memory part gets assigned the   variables are assigned undefined.                           same value. The functions create their own execution context.
+                           
+                                                            
 
 
 
