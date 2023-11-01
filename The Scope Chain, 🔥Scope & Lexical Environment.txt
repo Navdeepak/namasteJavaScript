@@ -1,0 +1,35 @@
+// The Scope Chain, 🔥Scope & Lexical Environment
+
+Wherever an execution context is created, a lexical environment is also created.
+Lexical environment is a local memory along with the lexical environment of its parent.
+
+Lexical means like hierarchy or in order or in sequence.
+
+Considering the following block of code, we can say that function c is lexically sitting inside function a. And function a is lexically inside global scope.
+
+function a() {
+    var b = 10;
+    c();
+    function c() {
+        console.log(b);
+    } 
+}
+
+a();
+console.log(b);
+
+When an execution context is created, it gets reference of its parent's lexical environment.
+
+So, from above example, the function c's execution context will have reference to function a's lexical environment.
+And, function a's execution context will have reference to lexical environment of global.
+And, for global execution context, it will have reference to its parent, which will be null. Because, there is no parent of global EC.
+
+In the above example, the console.log(b) written in function c will check for variable b in local memory of function c.
+    Since, it is not there, then it will check for reference of lexical environment of its parent. Then JavaScript engine goes to that reference and then goes to the lexical environment of its parent.
+    So, now it will look for b in its(function a's) local memory space.
+    But it is not there, so JS engine will again through the reference of function a's parent's lexical environment, go to global execution context.
+    There it will again look for b in global EC memory space. If not found then it will look for global EC's parent's lexical environment reference.
+    Since, it is null. So, it will return not defined, as there is no lexical environment left to go to. Now, the scope chain is exhausted.
+
+    This way of finding is called scope chain.
+    Scope chain is chain of lexical environments and parent references.
