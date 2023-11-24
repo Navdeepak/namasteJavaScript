@@ -1,0 +1,38 @@
+// let & const in JS 🔥Temporal Dead Zone
+
+console.log(b);     // Will console log a special placeholder 'undefined'.
+let a = 10;
+var b = 20;
+
+// Both are hoisted but it is done differently for let and const.
+// console.log(b);    Will console log a special placeholder 'undefined', as it is assgined memory before even the code is executed(hoisting).
+// When tried to access the let and const variables before initialization, the error, 'Uncaught Reference'error is shown, 'can not access a before initialization'
+// meaning we can only use it after the let, const variables are initialized/assigned a value.
+// Let and const variables are hoisted too.
+
+// As we know that the variables are assigned memory in Global memory space i.e. var variables. But let and const variables are not in that Global object/memory space.
+// Let and const are in a different memory space than the Global object, that is why we can not access them before a value is set to them in that memory space.
+
+// Temporal dead zone:
+// The time between hoisting of let variable and intialization is known as temoral dead zone. After a value is initialized the temporal dead zone ends.
+// Thus, when the variables are accessed and are in temporal dead zone, the uncaught reference error is thrwon.
+
+// Also, in the window/global object, the var declared variables are available and let/const are not there.
+// For the variables not present in the window object, when tried to access them, undefined is shown.
+// For browsers, window object is the global object.
+
+
+// let variables can not be re-initialized as a syntax error is shown for the same operation.
+// eg.
+let c = 10;
+let c = 100;
+// Above will show the syntax error.
+// JS will not execute a single line if this type of initialization is there in the code. It will just throw the syntax error.
+
+// const variables are even more strict than the let variables. As, let variables can be just declared and initialized separately later in code, 
+// the const variables can not.
+// It throws an error, Uncaught SyntaxError: Missing initializer in const declaration.
+// And if we try to assgin a const variable a value later in the code, after it was intialized with a value, then a type error is shown, assignemnt to a const variable.
+// It is not allowed in JS.
+
+
